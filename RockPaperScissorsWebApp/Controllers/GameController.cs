@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RockPaperScissorsWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,13 @@ namespace RockPaperScissorsWebApp.Controllers
 {
     public class GameController : Controller
     {
+        private readonly Game game;
+
+        public GameController(Game game)
+        {
+            this.game = game;
+        }
+
         // GET: Game
         public ActionResult PlayerVsPlayer()
         {
@@ -16,7 +24,8 @@ namespace RockPaperScissorsWebApp.Controllers
 
         public ActionResult PlayerVsComputer()
         {
-            return View();
+            var model = game;
+            return View(model);
         }
     }
 }

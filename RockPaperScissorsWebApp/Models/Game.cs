@@ -12,7 +12,7 @@ namespace RockPaperScissorsWebApp.Models
         P2WIN
     }
 
-    class Game
+    public class Game
     {
         public Game()
         {
@@ -54,5 +54,8 @@ namespace RockPaperScissorsWebApp.Models
         {
             get { return scoreboard.Draws; }
         }
+
+        public RPSChoice Player1Choice { get => player1Choice; }
+        public RPSChoice Player2Choice { get => player2Choice; }
     }
 }
