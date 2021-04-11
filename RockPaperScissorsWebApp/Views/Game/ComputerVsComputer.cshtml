@@ -10,11 +10,16 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
+<div class="btns-main-container">
+    <div class="form-actions no-color btn-ind-custom">
         <input name="submit" type="submit" value="Play Round" class="btn btn-default" />
     </div>
-    <div class="form-actions no-color">
+    <div class="form-actions no-color btn-ind-custom">
         <input name="submit" type="submit" value="Reset Scores" class="btn btn-default" />
     </div>
+</div>
+}
+
+@section customcss{
+    <link rel="stylesheet" href="~/Content/CSS/Styles.css">
 }

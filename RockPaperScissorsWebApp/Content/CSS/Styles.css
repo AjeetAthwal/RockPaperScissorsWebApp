@@ -1,0 +1,42 @@
+﻿body {
+}
+
+.custom-imgs-container {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.custom-img-container {
+
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.img-text {
+    text-align: center;
+    font-size:1.6em;
+}
+
+.btns-main-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.btns-rps-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;    
+}
+
+.btn-ind-custom {
+    margin:auto;
+}
+
+.custom-text-container{
+    display:flex;
+    margin:auto;
+}

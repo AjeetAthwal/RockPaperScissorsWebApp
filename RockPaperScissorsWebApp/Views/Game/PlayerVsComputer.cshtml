@@ -10,17 +10,25 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input name="submit" type="submit" value="Rock" class="btn btn-default" />
+<div class="btns-main-container">
+    <div class="btns-rps-container">
+        <div class="form-actions no-color btn-ind-custom">
+            <input name="submit" type="submit" value="Rock" class="btn btn-default" />
+        </div>
+        <div class="form-actions no-color btn-ind-custom">
+            <input name="submit" type="submit" value="Paper" class="btn btn-default" />
+        </div>
+        <div class="form-actions no-color btn-ind-custom">
+            <input name="submit" type="submit" value="Scissors" class="btn btn-default" />
+        </div>
     </div>
-    <div class="form-actions no-color">
-        <input name="submit" type="submit" value="Paper" class="btn btn-default" />
-    </div>
-    <div class="form-actions no-color">
-        <input name="submit" type="submit" value="Scissors" class="btn btn-default" />
-    </div>
-    <div class="form-actions no-color">
+    <div class="form-actions no-color btn-ind-custom">
         <input name="submit" type="submit" value="Reset Scores" class="btn btn-default" />
     </div>
+</div>
+}
+
+
+@section customcss{
+    <link rel="stylesheet" href="~/Content/CSS/Styles.css">
 }

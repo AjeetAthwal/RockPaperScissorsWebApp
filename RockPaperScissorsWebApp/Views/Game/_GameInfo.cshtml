@@ -1,9 +1,23 @@
 ﻿@model RockPaperScissorsWebApp.Models.Game
 
-Games Played = @Model.gamesPlayed
-P1 Wins = @Model.player1wins
-Draws = @Model.draws
-P2 Wins = @Model.player2wins
 
-p1 choice = @Model.Player1Choice
-p2 choice = @Model.Player2Choice
+<div class="custom-imgs-container">
+    @if (Model.gamesPlayed == 0)
+    {
+        <div class="custom-text-container"><p class="img-text">Rock, Paper, Scissors...</p></div>
+    }
+    else
+    {
+    <div class="custom-img-container">
+        <div><p class="img-text">Player 1</p></div>
+        <div><p class="img-text">@Model.player1wins</p></div>
+        <img src="~/Content/Images/@(Model.Player1Choice).png" alt="@Model.Player1Choice" />
+    </div>
+    <div class="custom-img-container">
+        <div><p class="img-text">Player 2</p></div>
+        <div><p class="img-text">@Model.player2wins</p></div>
+        <img src="~/Content/Images/@(Model.Player2Choice).png" alt="@Model.Player2Choice" />
+    </div>
+    }
+</div>
+
