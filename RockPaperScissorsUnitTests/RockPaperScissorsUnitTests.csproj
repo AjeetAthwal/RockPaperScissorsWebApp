@@ -52,6 +52,7 @@
     <Compile Include="RPSResultsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPSResultsConversionTests.cs" />
+    <Compile Include="ScoreboardTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
