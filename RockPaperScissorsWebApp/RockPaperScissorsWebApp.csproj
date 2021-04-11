@@ -160,6 +160,7 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\RandomRPSChoice.cs" />
     <Compile Include="Models\RPSChoice.cs" />
+    <Compile Include="Models\RPSP1P2Result.cs" />
     <Compile Include="Models\RPSResult.cs" />
     <Compile Include="Models\Scoreboard.cs" />
     <Compile Include="Models\User.cs" />
