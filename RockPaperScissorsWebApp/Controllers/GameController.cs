@@ -9,18 +9,18 @@ namespace RockPaperScissorsWebApp.Controllers
 {
     public class GameController : Controller
     {
-        private readonly Game game;
+        private readonly Game computerGame;
 
-        public GameController(Game game)
+        public GameController(ComputerGameData computerGame)
         {
-            this.game = game;
+            this.computerGame = computerGame.game;
         }
 
         // GET: Game
         [HttpGet]
         public ActionResult ComputerVsComputer()
         {
-            var model = game;
+            var model = computerGame;
             return View(model);
         }
 
@@ -34,8 +34,8 @@ namespace RockPaperScissorsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ComputerVsComputer(Game game)
         {
-            game.playRound();
-            var model = game;
+            computerGame.playRound();
+            var model = computerGame;
             return View(model);
         }
     }

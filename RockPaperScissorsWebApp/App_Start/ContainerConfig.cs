@@ -16,7 +16,7 @@ namespace RockPaperScissorsWebApp
             var builder = new ContainerBuilder();
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<Game>().SingleInstance();
+            builder.RegisterType<ComputerGameData>().SingleInstance();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
