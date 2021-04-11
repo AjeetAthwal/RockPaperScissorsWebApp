@@ -32,8 +32,8 @@ namespace RockPaperScissorsWebApp.Models
         }
 
         RandomRPSChoice randomRPSChoice;
-        private User player1;
-        private User player2;
+        private readonly User player1;
+        private readonly User player2;
         private Scoreboard scoreboard;
         private RPSChoice player1Choice;
         private RPSChoice player2Choice;
@@ -42,6 +42,12 @@ namespace RockPaperScissorsWebApp.Models
         {
             get { return scoreboard.Player1Wins; }
         }
+
+        internal void resetScores()
+        {
+            scoreboard.reset();
+        }
+
         public int player2wins
         {
             get { return scoreboard.Player2Wins; }

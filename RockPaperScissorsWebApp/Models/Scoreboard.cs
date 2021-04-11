@@ -40,5 +40,12 @@ namespace RockPaperScissorsWebApp.Models
         {
             get { return gamesPlayed - Player1Wins - Player2Wins; }
         }
+
+        internal void reset()
+        {
+            player1.resetWins();
+            player2.resetWins();
+            gamesPlayed = 0;
+        }
     }
 }

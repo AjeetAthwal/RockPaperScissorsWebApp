@@ -20,5 +20,10 @@ namespace RockPaperScissorsWebApp.Models
         private int wins;
 
         public int Wins { get => wins; }
+
+        internal void resetWins()
+        {
+            wins = 0;
+        }
     }
 }

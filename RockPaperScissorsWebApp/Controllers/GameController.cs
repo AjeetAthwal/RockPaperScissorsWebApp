@@ -34,17 +34,11 @@ namespace RockPaperScissorsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ComputerVsComputer(FormCollection form)
         {
-            if (form["play"] == "Play")
-            {
-                computerGame.playRound();
-                var model = computerGame;
-                return RedirectToAction("ComputerVsComputer", model);
-            }
-            else
-            {
-                var model = computerGame;
-                return View(model);
-            }
+            if (form["submit"] == "Play Round") computerGame.playRound();
+            else if (form["submit"] == "Reset Scores") computerGame.resetScores();
+
+            var model = computerGame;
+            return RedirectToAction("ComputerVsComputer", model);
         }
     }
 }
