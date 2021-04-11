@@ -34,7 +34,7 @@ namespace RockPaperScissorsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ComputerVsComputer(FormCollection form)
         {
-            if (form["submit"] == "Play Round") computerGame.playRound();
+            if (form["submit"] == "Play Round") computerGame.playRound((RPSChoice)0, (RPSChoice)0);
             else if (form["submit"] == "Reset Scores") computerGame.resetScores();
 
             var model = computerGame;

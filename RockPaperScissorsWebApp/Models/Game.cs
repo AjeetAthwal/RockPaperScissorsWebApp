@@ -22,10 +22,10 @@ namespace RockPaperScissorsWebApp.Models
             scoreboard = new Scoreboard(player1, player2);
         }
 
-        public void playRound()
+        public void playRound(RPSChoice rPSChoice1, RPSChoice rPSChoice2)
         {
-            player1Choice = player1.getRPSChoice();
-            player2Choice = player2.getRPSChoice();
+            player1Choice = player1.getRPSChoice(rPSChoice1);
+            player2Choice = player2.getRPSChoice(rPSChoice2);
 
             result = (RPSP1P2Result)RPSResultExtension.Beats(player1Choice, player2Choice);
             scoreboard.update(result);

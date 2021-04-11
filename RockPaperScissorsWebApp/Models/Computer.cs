@@ -12,7 +12,7 @@ namespace RockPaperScissorsWebApp.Models
             this.randomRPSChoice = randomRPSChoice;
         }
 
-        public override RPSChoice getRPSChoice()
+        public override RPSChoice getRPSChoice(RPSChoice rPSChoice)
         {
             return randomRPSChoice.Get();
         }
