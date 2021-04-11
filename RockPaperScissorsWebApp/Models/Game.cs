@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace RockPaperScissorsWebApp.Models
+{
+    public enum RPSP1P2Result
+    {
+        P1WIN,
+        DRAW,
+        P2WIN
+    }
+
+    class Game
+    {
+        public Game()
+        {
+            randomRPSChoice = new RandomRPSChoice();
+            player1 = new Computer(randomRPSChoice);
+            player2 = new Computer(randomRPSChoice);
+            scoreboard = new Scoreboard(player1, player2);
+        }
+
+        public void playRound()
+        {
+            player1Choice = player1.getRPSChoice();
+            player2Choice = player2.getRPSChoice();
+
+            result = (RPSP1P2Result)RPSResultExtension.Beats(player1Choice, player2Choice);
+            scoreboard.update(result);
+        }
+
+        RandomRPSChoice randomRPSChoice;
+        private User player1;
+        private User player2;
+        private Scoreboard scoreboard;
+        private RPSChoice player1Choice;
+        private RPSChoice player2Choice;
+        private RPSP1P2Result result;
+        public int player1wins
+        {
+            get { return scoreboard.Player1Wins; }
+        }
+        public int player2wins
+        {
+            get { return scoreboard.Player2Wins; }
+        }
+        public int gamesPlayed
+        {
+            get { return scoreboard.GamesPlayed; }
+        }
+        public int draws
+        {
+            get { return scoreboard.Draws; }
+        }
+    }
+}
