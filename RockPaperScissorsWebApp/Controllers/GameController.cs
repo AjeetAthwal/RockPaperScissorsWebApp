@@ -32,11 +32,19 @@ namespace RockPaperScissorsWebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ComputerVsComputer(Game game)
+        public ActionResult ComputerVsComputer(FormCollection form)
         {
-            computerGame.playRound();
-            var model = computerGame;
-            return View(model);
+            if (form["play"] == "Play")
+            {
+                computerGame.playRound();
+                var model = computerGame;
+                return RedirectToAction("ComputerVsComputer", model);
+            }
+            else
+            {
+                var model = computerGame;
+                return View(model);
+            }
         }
     }
 }
