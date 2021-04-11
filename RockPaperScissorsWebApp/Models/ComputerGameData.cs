@@ -10,7 +10,7 @@ namespace RockPaperScissorsWebApp.Models
 
         public ComputerGameData()
         {
-            game = new Game();
+            game = new Game(GameState.COMPUTERVSCOMPUTER);
         }
         public Game game;
     }

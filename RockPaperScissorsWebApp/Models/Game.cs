@@ -7,10 +7,11 @@ namespace RockPaperScissorsWebApp.Models
 {
     public class Game
     {
-        public Game()
+        public Game(GameState gameState)
         {
             randomRPSChoice = new RandomRPSChoice();
-            player1 = new Computer(randomRPSChoice);
+            if (gameState == GameState.COMPUTERVSCOMPUTER) player1 = new Computer(randomRPSChoice);
+            else player1 = new Player();
             player2 = new Computer(randomRPSChoice);
             scoreboard = new Scoreboard(player1, player2);
         }
