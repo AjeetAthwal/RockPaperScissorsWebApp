@@ -1,6 +1,23 @@
-﻿
+﻿@model RockPaperScissorsWebApp.Models.Game
 @{
     ViewBag.Title = "Player vs Computer";
 }
 
 <h2>Player vs Computer</h2>
+
+@Html.Partial("_GameInfo", Model)
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input name="submit" type="submit" value="Rock" class="btn btn-default" />
+    </div>
+    <div class="form-actions no-color">
+        <input name="submit" type="submit" value="Paper" class="btn btn-default" />
+    </div>
+    <div class="form-actions no-color">
+        <input name="submit" type="submit" value="Scissors" class="btn btn-default" />
+    </div>
+}

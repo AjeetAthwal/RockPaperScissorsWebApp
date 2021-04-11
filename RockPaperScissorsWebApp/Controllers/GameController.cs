@@ -41,20 +41,20 @@ namespace RockPaperScissorsWebApp.Controllers
         public ActionResult PlayerVsComputer()
         {
             var model = playerGame;
-            return View();
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PlayerVsComputer(FormCollection form)
         {
-            if (form["submit"] == "Rock") computerGame.playRound(RPSChoice.ROCK, (RPSChoice)0);
-            else if (form["submit"] == "Scissors") computerGame.playRound(RPSChoice.SCISSORS, (RPSChoice)0);
-            else if (form["submit"] == "Paper") computerGame.playRound(RPSChoice.PAPER, (RPSChoice)0);
-            else if (form["submit"] == "Reset Scores") computerGame.resetScores();
+            if (form["submit"] == "Rock") playerGame.playRound(RPSChoice.ROCK, (RPSChoice)0);
+            else if (form["submit"] == "Scissors") playerGame.playRound(RPSChoice.SCISSORS, (RPSChoice)0);
+            else if (form["submit"] == "Paper") playerGame.playRound(RPSChoice.PAPER, (RPSChoice)0);
+            else if (form["submit"] == "Reset Scores") playerGame.resetScores();
 
-            var model = computerGame;
-            return RedirectToAction("ComputerVsComputer", model);
+            var model = playerGame;
+            return RedirectToAction("PlayerVsComputer", model);
         }
     }
 }

@@ -203,6 +203,7 @@
     <Content Include="Views\Game\ComputerVsComputer.cshtml" />
     <Content Include="Views\Game\PlayerVsComputer.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Game\_GameInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
