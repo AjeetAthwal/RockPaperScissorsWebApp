@@ -31,6 +31,7 @@ namespace RockPaperScissorsWebApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ComputerVsComputer(Game game)
         {
             game.playRound();
