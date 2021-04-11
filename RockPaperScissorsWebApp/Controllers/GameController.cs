@@ -17,15 +17,25 @@ namespace RockPaperScissorsWebApp.Controllers
         }
 
         // GET: Game
+        [HttpGet]
         public ActionResult ComputerVsComputer()
         {
             var model = game;
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult PlayerVsComputer()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ComputerVsComputer(Game game)
+        {
+            game.playRound();
+            var model = game;
+            return View(model);
         }
     }
 }
