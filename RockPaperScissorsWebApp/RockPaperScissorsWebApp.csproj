@@ -196,7 +196,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Game\PlayerVsPlayer.cshtml" />
+    <Content Include="Views\Game\ComputerVsComputer.cshtml" />
     <Content Include="Views\Game\PlayerVsComputer.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
