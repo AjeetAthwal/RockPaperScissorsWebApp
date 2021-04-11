@@ -1,4 +1,4 @@
-﻿
+﻿@model RockPaperScissorsWebApp.Models.Game
 @{
     ViewBag.Title = "Player vs Player";
 }
@@ -12,3 +12,12 @@ P2 Wins = @Model.player2wins
 
 p1 choice = @Model.Player1Choice
 p2 choice = @Model.Player2Choice
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Play" class="btn btn-default" />
+    </div>
+}
