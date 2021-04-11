@@ -6,9 +6,15 @@ using System.Web.Mvc;
 
 namespace RockPaperScissorsWebApp.Controllers
 {
-    public class HomeController : Controller
+    public class GameController : Controller
     {
-        public ActionResult Index()
+        // GET: Game
+        public ActionResult PlayerVsPlayer()
+        {
+            return View();
+        }
+
+        public ActionResult PlayerVsComputer()
         {
             return View();
         }
