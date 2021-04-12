@@ -8,7 +8,7 @@ namespace RockPaperScissorsUnitTests
     public class RPSResultsConversionTests
     {
         [TestMethod]
-        public void WinConvertsToP1Win()
+        public void RPSResultToRPSP1P2ResultCast_WIN_ReturnsP1WIN()
         {
             // Arrange
             RPSResult rpsResult = RPSResult.WIN;
@@ -22,7 +22,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void LossConvertsToP2Win()
+        public void RPSResultToRPSP1P2ResultCast_LOSS_ReturnsP2WIN()
         {
             // Arrange
             RPSResult rpsResult = RPSResult.LOSS;
@@ -36,7 +36,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void DrawConvertsToDraw()
+        public void RPSResultToRPSP1P2ResultCast_DRAW_ReturnsP1DRAW()
         {
             // Arrange
             RPSResult rpsResult = RPSResult.DRAW;
