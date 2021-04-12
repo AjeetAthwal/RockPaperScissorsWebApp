@@ -12,9 +12,9 @@ namespace RockPaperScissorsWebApp.Models
             r = new Random();
         }
 
-        internal RandomRPSChoice(int i)
+        internal RandomRPSChoice(int seed)
         {
-            r = new Random(i);
+            r = new Random(seed);
         }
 
         public RPSChoice Get()
