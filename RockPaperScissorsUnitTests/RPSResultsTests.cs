@@ -8,7 +8,7 @@ namespace RockPaperScissorsUnitTests
     public class RPSResultsTests
     {
         [TestMethod]
-        public void RockBeatsScissors()
+        public void Beats_RockVsScissors_ReturnsWin()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.ROCK;
@@ -23,7 +23,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void ScissorsBeatsPaper()
+        public void Beats_ScissorsVsRock_ReturnsWin()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.SCISSORS;
@@ -38,7 +38,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void PaperBeatsRock()
+        public void Beats_PaperVsRock_ReturnsWin()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.PAPER;
@@ -53,7 +53,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void ScissorsLossesToRock()
+        public void Beats_ScissorsVsRock_ReturnsLoss()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.SCISSORS;
@@ -68,7 +68,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void PaperLossesToScissors()
+        public void Beats_PaperVsScissors_ReturnsLoss()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.PAPER;
@@ -83,7 +83,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void RockLossesToPaper()
+        public void Beats_RockVsPaper_ReturnsLoss()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.ROCK;
@@ -98,7 +98,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void RockDrawWorks()
+        public void Beats_RockVsRock_ReturnsDraw()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.ROCK;
@@ -113,7 +113,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void PaperDrawWorks()
+        public void Beats_PaperVsPaper_ReturnsDraw()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.PAPER;
@@ -128,7 +128,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void ScissorsDrawWorks()
+        public void Beats_ScissorsVsScissors_ReturnsDraw()
         {
             // Arrange
             RPSChoice choice1 = RPSChoice.SCISSORS;
