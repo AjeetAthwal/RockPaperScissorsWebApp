@@ -23,6 +23,32 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
+        public void CreateEmptyScoreboard__ReturnsScoreboardWithNoGamePlayed()
+        {
+            // Arrange
+            int expectedGamesPlayed = 0;
+
+            // Act
+            Scoreboard actualScoreboard = CreateEmptyScoreboard();
+
+            // Assert
+            Assert.AreEqual(expectedGamesPlayed, actualScoreboard.GamesPlayed);
+        }
+
+        [TestMethod]
+        public void CreateNonEmptyScoreboard__ReturnsScoreboardWithMoreThanNoGamePlayed()
+        {
+            // Arrange
+            int expectedGamesPlayedGreaterThan = 0;
+
+            // Act
+            Scoreboard actualScoreboard = CreateNonEmptyScoreboard();
+
+            // Assert
+            Assert.IsTrue(actualScoreboard.GamesPlayed > expectedGamesPlayedGreaterThan);
+        }
+
+        [TestMethod]
         public void update_P1WIN_ReturnsScoreboardWithOneWinForPlayerOne()
         {
             // Arrange
