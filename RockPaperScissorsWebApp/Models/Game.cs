@@ -18,11 +18,11 @@ namespace RockPaperScissorsWebApp.Models
 
         public void playRound(RPSChoice rPSChoice1, RPSChoice rPSChoice2)
         {
-            player1Choice = player1.getRPSChoice(rPSChoice1);
-            player2Choice = player2.getRPSChoice(rPSChoice2);
+            player1Choice = player1.GetRPSChoice(rPSChoice1);
+            player2Choice = player2.GetRPSChoice(rPSChoice2);
 
             result = (RPSP1P2Result)RPSResultExtension.Beats(player1Choice, player2Choice);
-            scoreboard.update(result);
+            scoreboard.Update(result);
         }
 
         RandomRPSChoice randomRPSChoice;
@@ -37,20 +37,20 @@ namespace RockPaperScissorsWebApp.Models
             get { return scoreboard.Player1Wins; }
         }
 
-        internal void resetScores()
+        internal void ResetScores()
         {
-            scoreboard.reset();
+            scoreboard.Reset();
         }
 
-        public int player2wins
+        public int Player2wins
         {
             get { return scoreboard.Player2Wins; }
         }
-        public int gamesPlayed
+        public int GamesPlayed
         {
             get { return scoreboard.GamesPlayed; }
         }
-        public int draws
+        public int Draws
         {
             get { return scoreboard.Draws; }
         }

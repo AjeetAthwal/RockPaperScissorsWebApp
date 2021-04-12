@@ -14,15 +14,15 @@ namespace RockPaperScissorsWebApp.Models
             gamesPlayed = 0;
         }
 
-        public void update(RPSP1P2Result result)
+        public void Update(RPSP1P2Result result)
         {
             if (result == RPSP1P2Result.P1WIN) player1.AddWin();
             else if (result == RPSP1P2Result.P2WIN) player2.AddWin();
             gamesPlayed++;
         }
 
-        User player1;
-        User player2;
+        readonly User player1;
+        readonly User player2;
         private int gamesPlayed;
         public int Player1Wins
         {
@@ -41,7 +41,7 @@ namespace RockPaperScissorsWebApp.Models
             get { return gamesPlayed - Player1Wins - Player2Wins; }
         }
 
-        public void reset()
+        public void Reset()
         {
             player1.ResetWins();
             player2.ResetWins();

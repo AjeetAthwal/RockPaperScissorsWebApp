@@ -93,7 +93,7 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void getRPSChoice_Rock_returnsRock()
+        public void GetRPSChoice_Rock_returnsRock()
         {
             // Arrange
             Player player = CreatePlayerWithNoWins();
@@ -101,14 +101,14 @@ namespace RockPaperScissorsUnitTests
             RPSChoice expected = RPSChoice.ROCK;
 
             // Act
-            RPSChoice actual = player.getRPSChoice(input);
+            RPSChoice actual = player.GetRPSChoice(input);
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getRPSChoice_Paper_returnsPaper()
+        public void GetRPSChoice_Paper_returnsPaper()
         {
             // Arrange
             Player player = CreatePlayerWithNoWins();
@@ -116,14 +116,14 @@ namespace RockPaperScissorsUnitTests
             RPSChoice expected = RPSChoice.PAPER;
 
             // Act
-            RPSChoice actual = player.getRPSChoice(input);
+            RPSChoice actual = player.GetRPSChoice(input);
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getRPSChoice_Scissors_returnsScissors()
+        public void GetRPSChoice_Scissors_returnsScissors()
         {
             // Arrange
             Player player = CreatePlayerWithNoWins();
@@ -131,7 +131,7 @@ namespace RockPaperScissorsUnitTests
             RPSChoice expected = RPSChoice.SCISSORS;
 
             // Act
-            RPSChoice actual = player.getRPSChoice(input);
+            RPSChoice actual = player.GetRPSChoice(input);
 
             // Assert
             Assert.AreEqual(expected, actual);

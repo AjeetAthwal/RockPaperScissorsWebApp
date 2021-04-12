@@ -7,7 +7,7 @@ namespace RockPaperScissorsWebApp.Models
 {
     public class Player : User
     {
-        public override RPSChoice getRPSChoice(RPSChoice rPSChoice)
+        public override RPSChoice GetRPSChoice(RPSChoice rPSChoice)
         {
             return rPSChoice;
         }

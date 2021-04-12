@@ -31,7 +31,7 @@ namespace RockPaperScissorsWebApp.Controllers
         public ActionResult ComputerVsComputer(FormCollection form)
         {
             if (form["submit"] == "Play Round") computerGame.playRound((RPSChoice)0, (RPSChoice)0);
-            else if (form["submit"] == "Reset Scores") computerGame.resetScores();
+            else if (form["submit"] == "Reset Scores") computerGame.ResetScores();
 
             var model = computerGame;
             return RedirectToAction("ComputerVsComputer", model);
@@ -51,7 +51,7 @@ namespace RockPaperScissorsWebApp.Controllers
             if (form["submit"] == "Rock") playerGame.playRound(RPSChoice.ROCK, (RPSChoice)0);
             else if (form["submit"] == "Scissors") playerGame.playRound(RPSChoice.SCISSORS, (RPSChoice)0);
             else if (form["submit"] == "Paper") playerGame.playRound(RPSChoice.PAPER, (RPSChoice)0);
-            else if (form["submit"] == "Reset Scores") playerGame.resetScores();
+            else if (form["submit"] == "Reset Scores") playerGame.ResetScores();
 
             var model = playerGame;
             return RedirectToAction("PlayerVsComputer", model);

@@ -2,7 +2,7 @@
 
 
 <div class="custom-results-container">
-    @if (Model.gamesPlayed == 0)
+    @if (Model.GamesPlayed == 0)
     {
         <div class="custom-text-container"><p class="img-text">Rock, Paper, Scissors...</p></div>
     }
@@ -30,7 +30,7 @@
             </div>
             <div class="custom-img-container">
                 <div><p class="img-text">Player 2</p></div>
-                <div><p class="img-text">@Model.player2wins</p></div>
+                <div><p class="img-text">@Model.Player2wins</p></div>
                 <img src="~/Content/Images/@(Model.Player2Choice).png" alt="@Model.Player2Choice" />
             </div>
         </div>
