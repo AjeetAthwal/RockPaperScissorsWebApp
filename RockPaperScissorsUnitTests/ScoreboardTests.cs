@@ -16,24 +16,67 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void AddingP1WinWorks()
+        public void update_P1WIN_ReturnsScoreboardWithOneWinForPlayerOne()
         {
             // Arrange
-            Scoreboard scoreboard = CreateEmptyScoreboard();
+            Scoreboard actualScoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
             int expectedP1Wins = 1;
-            int expectedP2Wins = 0;
-            int expectedDraws = 0;
-            int expectedgamesPlayed = 1;
 
             // Act
-            scoreboard.update(newRPSresult);
+            actualScoreboard.update(newRPSresult);
+            int actualP1Wins = actualScoreboard.Player1Wins;
 
             // Assert
-            Assert.AreEqual(expectedP1Wins, scoreboard.Player1Wins);
-            Assert.AreEqual(expectedP2Wins, scoreboard.Player2Wins);
-            Assert.AreEqual(expectedDraws, scoreboard.Draws);
-            Assert.AreEqual(expectedgamesPlayed, scoreboard.GamesPlayed);
+            Assert.AreEqual(expectedP1Wins, actualP1Wins);
+        }
+
+        [TestMethod]
+        public void update_P1WIN_ReturnsScoreboardWithNoWinForPlayerTwo()
+        {
+            // Arrange
+            Scoreboard actualScoreboard = CreateEmptyScoreboard();
+            RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
+            int expectedP2Wins = 1;
+
+            // Act
+            actualScoreboard.update(newRPSresult);
+            int actualP2Wins = actualScoreboard.Player2Wins;
+
+            // Assert
+            Assert.AreEqual(expectedP2Wins, actualP2Wins) ;
+        }
+
+        [TestMethod]
+        public void update_P1WIN_ReturnsScoreboardWithNoDraw()
+        {
+            // Arrange
+            Scoreboard actualScoreboard = CreateEmptyScoreboard();
+            RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
+            int expectedDraws = 0;
+
+            // Act
+            actualScoreboard.update(newRPSresult);
+            int actualDraws = actualScoreboard.Draws;
+
+            // Assert
+            Assert.AreEqual(expectedDraws, actualDraws);
+        }
+
+        [TestMethod]
+        public void update_P1WIN_ReturnsScoreboardWithOneGamePlayed()
+        {
+            // Arrange
+            Scoreboard actualScoreboard = CreateEmptyScoreboard();
+            RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
+            int expectedGamesPlayed = 1;
+
+            // Act
+            actualScoreboard.update(newRPSresult);
+            int actualGamesPlayed = actualScoreboard.GamesPlayed;
+
+            // Assert
+            Assert.AreEqual(expectedGamesPlayed, actualGamesPlayed);
         }
 
         [TestMethod]
