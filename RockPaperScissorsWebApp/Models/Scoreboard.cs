@@ -16,8 +16,8 @@ namespace RockPaperScissorsWebApp.Models
 
         public void update(RPSP1P2Result result)
         {
-            if (result == RPSP1P2Result.P1WIN) player1.addWin();
-            else if (result == RPSP1P2Result.P2WIN) player2.addWin();
+            if (result == RPSP1P2Result.P1WIN) player1.AddWin();
+            else if (result == RPSP1P2Result.P2WIN) player2.AddWin();
             gamesPlayed++;
         }
 
@@ -43,8 +43,8 @@ namespace RockPaperScissorsWebApp.Models
 
         public void reset()
         {
-            player1.resetWins();
-            player2.resetWins();
+            player1.ResetWins();
+            player2.ResetWins();
             gamesPlayed = 0;
         }
     }

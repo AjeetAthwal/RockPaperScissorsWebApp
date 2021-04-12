@@ -11,7 +11,7 @@ namespace RockPaperScissorsWebApp.Models
         {
             wins = 0;
         }
-        public void addWin()
+        public void AddWin()
         {
             wins++;
         }
@@ -21,7 +21,7 @@ namespace RockPaperScissorsWebApp.Models
 
         public int Wins { get => wins; }
 
-        internal void resetWins()
+        internal void ResetWins()
         {
             wins = 0;
         }
