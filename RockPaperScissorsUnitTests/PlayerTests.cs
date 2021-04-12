@@ -19,6 +19,9 @@ namespace RockPaperScissorsUnitTests
             return player;
         }
 
+        /// <summary>
+        /// Zero should be returned when a player with no wins has its property Wins called
+        /// </summary>
         [TestMethod]
         public void Wins_PlayerWithNoWins_returnsZeroWins()
         {
@@ -33,6 +36,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// One should be returned when a player with no wins invokes AddWin() and its property Wins called
+        /// </summary>
         [TestMethod]
         public void AddWin_PlayerWithNoWins_returnsOneWin()
         {
@@ -48,6 +54,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// A number greater than 0 should be returned when a player with wins has its property Wins called
+        /// </summary>
         [TestMethod]
         public void Wins_PlayerWithWins_returnsMoreThanZeroWins()
         {
@@ -62,6 +71,9 @@ namespace RockPaperScissorsUnitTests
             Assert.IsTrue(actual > expectedGreaterThan);
         }
 
+        /// <summary>
+        /// A number greater than 0 should be returned when a player with wins has its property Wins called
+        /// </summary>
         [TestMethod]
         public void ResetWins_PlayerWithNoWins_returnsZeroWins()
         {
@@ -77,6 +89,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// 0 should be returned when a player with wins invokes ResetWins() and its property Wins called
+        /// </summary>
         [TestMethod]
         public void ResetWins_PlayerWithWins_returnsZeroWins()
         {
@@ -92,6 +107,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// ROCK should be returned when a player with invokes GetRPSChoice() and with argument ROCK
+        /// </summary>
         [TestMethod]
         public void GetRPSChoice_Rock_returnsRock()
         {
@@ -107,6 +125,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// PAPER should be returned when a player with invokes GetRPSChoice() and with argument PAPER
+        /// </summary>
         [TestMethod]
         public void GetRPSChoice_Paper_returnsPaper()
         {
@@ -122,6 +143,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// SCISSORS should be returned when a player with invokes GetRPSChoice() and with argument SCISSORS
+        /// </summary>
         [TestMethod]
         public void GetRPSChoice_Scissors_returnsScissors()
         {
