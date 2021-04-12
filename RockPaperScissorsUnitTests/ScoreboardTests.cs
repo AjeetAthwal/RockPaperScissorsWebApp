@@ -7,14 +7,19 @@ namespace RockPaperScissorsUnitTests
     [TestClass]
     public class ScoreboardTests
     {
+        private Scoreboard CreateEmptyScoreboard()
+        {
+            RandomRPSChoice r = new RandomRPSChoice();
+            Computer player1 = new Computer(r);
+            Computer player2 = new Computer(r);
+            return new Scoreboard(player1, player2);
+        }
+
         [TestMethod]
         public void AddingP1WinWorks()
         {
             // Arrange
-            RandomRPSChoice r = new RandomRPSChoice();
-            Computer player1 = new Computer(r);
-            Computer player2 = new Computer(r);
-            Scoreboard scoreboard = new Scoreboard(player1, player2);
+            Scoreboard scoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
             int expectedP1Wins = 1;
             int expectedP2Wins = 0;
@@ -35,10 +40,7 @@ namespace RockPaperScissorsUnitTests
         public void AddingP2WinWorks()
         {
             // Arrange
-            RandomRPSChoice r = new RandomRPSChoice();
-            Computer player1 = new Computer(r);
-            Computer player2 = new Computer(r);
-            Scoreboard scoreboard = new Scoreboard(player1, player2);
+            Scoreboard scoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult = RPSP1P2Result.P2WIN;
             int expectedP1Wins = 0;
             int expectedP2Wins = 1;
@@ -59,10 +61,7 @@ namespace RockPaperScissorsUnitTests
         public void AddingDrawWorks()
         {
             // Arrange
-            RandomRPSChoice r = new RandomRPSChoice();
-            Computer player1 = new Computer(r);
-            Computer player2 = new Computer(r);
-            Scoreboard scoreboard = new Scoreboard(player1, player2);
+            Scoreboard scoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult = RPSP1P2Result.DRAW;
             int expectedP1Wins = 0;
             int expectedP2Wins = 0;
@@ -78,14 +77,12 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expectedDraws, scoreboard.Draws);
             Assert.AreEqual(expectedgamesPlayed, scoreboard.GamesPlayed);
         }
+
         [TestMethod]
         public void AddingMultipleResultsWorks()
         {
             // Arrange
-            RandomRPSChoice r = new RandomRPSChoice();
-            Computer player1 = new Computer(r);
-            Computer player2 = new Computer(r);
-            Scoreboard scoreboard = new Scoreboard(player1, player2);
+            Scoreboard scoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult1 = RPSP1P2Result.DRAW;
             RPSP1P2Result newRPSresult2 = RPSP1P2Result.P1WIN;
             RPSP1P2Result newRPSresult3 = RPSP1P2Result.P1WIN;
@@ -108,13 +105,11 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expectedgamesPlayed, scoreboard.GamesPlayed);
         }
 
+        [TestMethod]
         public void ResetScoresWorks()
         {
             // Arrange
-            RandomRPSChoice r = new RandomRPSChoice();
-            Computer player1 = new Computer(r);
-            Computer player2 = new Computer(r);
-            Scoreboard scoreboard = new Scoreboard(player1, player2);
+            Scoreboard scoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult1 = RPSP1P2Result.DRAW;
             RPSP1P2Result newRPSresult2 = RPSP1P2Result.P1WIN;
             RPSP1P2Result newRPSresult3 = RPSP1P2Result.P1WIN;
