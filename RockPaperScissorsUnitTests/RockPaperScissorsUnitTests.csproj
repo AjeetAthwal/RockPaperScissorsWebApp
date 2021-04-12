@@ -55,6 +55,7 @@
     <Compile Include="ScoreboardTests.cs" />
     <Compile Include="PlayerTests.cs" />
     <Compile Include="ComputerTests.cs" />
+    <Compile Include="RandomRPSChoiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

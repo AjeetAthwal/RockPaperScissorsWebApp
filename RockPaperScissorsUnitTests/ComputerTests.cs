@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissorsWebApp.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RockPaperScissorsUnitTests
 {
@@ -11,6 +13,19 @@ namespace RockPaperScissorsUnitTests
         {
             RandomRPSChoice r = new RandomRPSChoice();
             return new Computer(r);
+        }
+
+        private Computer CreateComputerWithSetSeed(int seed)
+        {
+            RandomRPSChoice r = new RandomRPSChoice(seed);
+            return new Computer(r);
+        }
+
+        private static int CreateSeed()
+        {
+            Random r1 = new Random();
+            int seed = r1.Next();
+            return seed;
         }
 
         private Computer CreateComputerWithWins()
@@ -94,47 +109,87 @@ namespace RockPaperScissorsUnitTests
         }
 
         [TestMethod]
-        public void GetRPSChoice_1000Rocks_returnsRandomRPSChoice()
+        public void GetRPSChoice_100Rocks_returnsRandomRPSChoice()
         {
             // Arrange
-            Computer computer = CreateComputerWithNoWins();
+            int NUMBEROFGETS = 100;
+            int seed = CreateSeed();
+            Computer computer = CreateComputerWithSetSeed(seed);
+            RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
             RPSChoice input = RPSChoice.ROCK;
+            List<RPSChoice> expected = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                expected.Add(randomRPSChoice.Get());
+            }
 
             // Act
-            RPSChoice actual = computer.GetRPSChoice(input);
+            List<RPSChoice> actual = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                actual.Add(computer.GetRPSChoice(input));
+            }
 
             // Assert
-            Assert.Fail();
+            Assert.IsTrue(expected.SequenceEqual(actual));
         }
 
         [TestMethod]
         public void GetRPSChoice_1000Paper_returnsRandomRPSChoice()
         {
             // Arrange
-            Computer computer = CreateComputerWithNoWins();
+            int NUMBEROFGETS = 100;
+            int seed = CreateSeed();
+            Computer computer = CreateComputerWithSetSeed(seed);
+            RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
             RPSChoice input = RPSChoice.PAPER;
+            List<RPSChoice> expected = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                expected.Add(randomRPSChoice.Get());
+            }
 
             // Act
-            RPSChoice actual = computer.GetRPSChoice(input);
+            List<RPSChoice> actual = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                actual.Add(computer.GetRPSChoice(input));
+            }
 
             // Assert
-            Assert.Fail();
+            Assert.IsTrue(expected.SequenceEqual(actual));
         }
-
 
         [TestMethod]
         public void GetRPSChoice_1000Scissors_returnsRandomRPSChoice()
         {
             // Arrange
-            Computer computer = CreateComputerWithNoWins();
+            int NUMBEROFGETS = 100;
+            int seed = CreateSeed();
+            Computer computer = CreateComputerWithSetSeed(seed);
+            RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
             RPSChoice input = RPSChoice.SCISSORS;
-            RPSChoice expected = RPSChoice.SCISSORS;
+            List<RPSChoice> expected = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                expected.Add(randomRPSChoice.Get());
+            }
 
             // Act
-            RPSChoice actual = computer.GetRPSChoice(input);
+            List<RPSChoice> actual = new List<RPSChoice>();
+
+            for (int i = 0; i < NUMBEROFGETS; i++)
+            {
+                actual.Add(computer.GetRPSChoice(input));
+            }
 
             // Assert
-            Assert.Fail();
+            Assert.IsTrue(expected.SequenceEqual(actual));
         }
     }
 }

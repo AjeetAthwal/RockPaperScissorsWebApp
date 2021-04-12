@@ -12,11 +12,16 @@ namespace RockPaperScissorsWebApp.Models
             r = new Random();
         }
 
+        internal RandomRPSChoice(int i)
+        {
+            r = new Random(i);
+        }
+
         public RPSChoice Get()
         {
             return (RPSChoice)r.Next(0, Enum.GetValues(typeof(RPSChoice)).Length);
         }
 
-        readonly Random r;
+        internal readonly Random r;
     }
 }
