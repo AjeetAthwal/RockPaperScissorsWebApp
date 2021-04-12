@@ -9,12 +9,18 @@ namespace RockPaperScissorsUnitTests
     [TestClass]
     public class RandomRPSChoiceTests
     {
+        private static int GetSeed()
+        {
+            Random r1 = new Random();
+            int seed = r1.Next();
+            return seed;
+        }
+
         [TestMethod]
         public void Get_SingleGet_ReturnsSameRPSChoice()
         {
             // Assign
-            Random r1 = new Random();
-            int seed = r1.Next();
+            int seed = GetSeed();
             RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
             Random r = new Random(seed);
             RPSChoice expected = (RPSChoice)r.Next(0, Enum.GetValues(typeof(RPSChoice)).Length);
@@ -31,8 +37,7 @@ namespace RockPaperScissorsUnitTests
         {
             // Assign
             int NUMBEROFGETS = 100;
-            Random r1 = new Random();
-            int seed = r1.Next();
+            int seed = GetSeed();
             RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
             Random r = new Random(seed);
             List<RPSChoice> expected = new List<RPSChoice>();
