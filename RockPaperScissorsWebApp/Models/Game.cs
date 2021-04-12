@@ -57,5 +57,6 @@ namespace RockPaperScissorsWebApp.Models
 
         public RPSChoice Player1Choice { get => player1Choice; }
         public RPSChoice Player2Choice { get => player2Choice; }
+        public RPSP1P2Result Result { get => result; }
     }
 }

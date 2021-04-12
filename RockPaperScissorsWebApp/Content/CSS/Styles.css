@@ -2,11 +2,24 @@
 }
 
 .custom-imgs-container {
-    height: 300px;
     display: flex;
     flex-direction: row;
     margin: auto;
 }
+
+
+.custom-results-container {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.custom-result-container {
+    display: flex;
+    margin: auto;
+}
+
 
 .custom-img-container {
 

@@ -1,23 +1,39 @@
 ﻿@model RockPaperScissorsWebApp.Models.Game
 
 
-<div class="custom-imgs-container">
+<div class="custom-results-container">
     @if (Model.gamesPlayed == 0)
     {
         <div class="custom-text-container"><p class="img-text">Rock, Paper, Scissors...</p></div>
     }
     else
     {
-    <div class="custom-img-container">
-        <div><p class="img-text">Player 1</p></div>
-        <div><p class="img-text">@Model.player1wins</p></div>
-        <img src="~/Content/Images/@(Model.Player1Choice).png" alt="@Model.Player1Choice" />
-    </div>
-    <div class="custom-img-container">
-        <div><p class="img-text">Player 2</p></div>
-        <div><p class="img-text">@Model.player2wins</p></div>
-        <img src="~/Content/Images/@(Model.Player2Choice).png" alt="@Model.Player2Choice" />
-    </div>
-    }
-</div>
+        <div class="custom-result-container">
+            @if (Model.Result == RockPaperScissorsWebApp.Models.RPSP1P2Result.DRAW)
+            {
+            <p>DRAW! Both chose&nbsp</p>@Model.Player1Choice<p>!</p>
+            }
+            else if (Model.Result == RockPaperScissorsWebApp.Models.RPSP1P2Result.P1WIN)
+            {
+        <p>Player 1 Wins!&nbsp</p>@Model.Player1Choice<p>&nbspbeats&nbsp</p>@Model.Player2Choice<p>!</p>
+            }
+            else
+            {
+                <p>Player 1 Wins! </p>@Model.Player2Choice<p>&nbspbeats&nbsp</p>@Model.Player1Choice<p>!</p>
+            }
+        </div>
+        <div class="custom-imgs-container">
+            <div class="custom-img-container">
+                <div><p class="img-text">Player 1</p></div>
+                <div><p class="img-text">@Model.player1wins</p></div>
+                <img src="~/Content/Images/@(Model.Player1Choice).png" alt="@Model.Player1Choice" />
+            </div>
+            <div class="custom-img-container">
+                <div><p class="img-text">Player 2</p></div>
+                <div><p class="img-text">@Model.player2wins</p></div>
+                <img src="~/Content/Images/@(Model.Player2Choice).png" alt="@Model.Player2Choice" />
+            </div>
+        </div>
+            }
+        </div>
 
