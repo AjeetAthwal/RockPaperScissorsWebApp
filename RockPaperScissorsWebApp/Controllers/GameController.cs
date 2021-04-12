@@ -12,10 +12,10 @@ namespace RockPaperScissorsWebApp.Controllers
         private readonly Game computerGame;
         private readonly Game playerGame;
 
-        public GameController(ComputerGameData computerGame, PlayerGameData playerGame)
+        public GameController(GameData gameData)
         {
-            this.computerGame = computerGame.game;
-            this.playerGame = playerGame.game;
+            this.computerGame = gameData.computerGame;
+            this.playerGame = gameData.playerGame;
         }
 
         // GET: Game

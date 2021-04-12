@@ -5,21 +5,14 @@ using System.Web;
 
 namespace RockPaperScissorsWebApp.Models
 {
-    public class ComputerGameData
+    public class GameData
     {
-        public ComputerGameData()
+        public GameData()
         {
-            game = new Game(GameState.COMPUTERVSCOMPUTER);
+            computerGame = new Game(GameState.COMPUTERVSCOMPUTER);
+            playerGame = new Game(GameState.PLAYERVSCOMPUTER);
         }
-        public Game game;
-    }
-
-    public class PlayerGameData
-    {
-        public PlayerGameData()
-        {
-            game = new Game(GameState.PLAYERVSCOMPUTER);
-        }
-        public Game game;
+        public Game computerGame;
+        public Game playerGame;
     }
 }
