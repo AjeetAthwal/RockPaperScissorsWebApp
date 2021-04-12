@@ -37,7 +37,7 @@ namespace RockPaperScissorsUnitTests
             // Arrange
             Scoreboard actualScoreboard = CreateEmptyScoreboard();
             RPSP1P2Result newRPSresult = RPSP1P2Result.P1WIN;
-            int expectedP2Wins = 1;
+            int expectedP2Wins = 0;
 
             // Act
             actualScoreboard.update(newRPSresult);
