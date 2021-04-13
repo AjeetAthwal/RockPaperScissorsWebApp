@@ -7,6 +7,9 @@ namespace RockPaperScissorsUnitTests
     [TestClass]
     public class RPSResultsConversionTests
     {
+        /// <summary>
+        /// P1WIN should be returned when a variable of type RPSResult with input WIN is cast to RPSP1P2Result
+        /// </summary>
         [TestMethod]
         public void RPSResultToRPSP1P2ResultCast_WIN_ReturnsP1WIN()
         {
@@ -21,6 +24,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// P2WIN should be returned when a variable of type RPSResult with input LOSS is cast to RPSP1P2Result
+        /// </summary>
         [TestMethod]
         public void RPSResultToRPSP1P2ResultCast_LOSS_ReturnsP2WIN()
         {
@@ -35,6 +41,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// DRAW should be returned when a variable of type RPSResult with input DRAW is cast to RPSP1P2Result
+        /// </summary>
         [TestMethod]
         public void RPSResultToRPSP1P2ResultCast_DRAW_ReturnsP1DRAW()
         {
