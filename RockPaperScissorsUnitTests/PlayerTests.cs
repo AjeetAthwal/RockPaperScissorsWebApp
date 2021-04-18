@@ -7,11 +7,17 @@ namespace RockPaperScissorsUnitTests
     [TestClass]
     public class PlayerTests
     {
+        /// <summary>
+        /// Helper function that generates a player with no wins. Tested using Wins_PlayerWithNoWins_returnsZeroWins
+        /// </summary>
         private Player CreatePlayerWithNoWins()
         {
             return new Player();
         }
 
+        /// <summary>
+        /// Helper function that generates a player with wins. Tested using Wins_PlayerWithWins_returnsMoreThanZeroWins
+        /// </summary>
         private Player CreatePlayerWithWins()
         {
             Player player = new Player();
