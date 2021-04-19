@@ -16,6 +16,15 @@ namespace RockPaperScissorsWebApp.Models
             scoreboard = new Scoreboard(player1, player2);
         }
 
+        internal Game(GameState gameState, int seed)
+        {
+            randomRPSChoice = new RandomRPSChoice(seed);
+            if (gameState == GameState.COMPUTERVSCOMPUTER) player1 = new Computer(randomRPSChoice);
+            else player1 = new Player();
+            player2 = new Computer(randomRPSChoice);
+            scoreboard = new Scoreboard(player1, player2);
+        }
+
         public void playRound(RPSChoice rPSChoice1, RPSChoice rPSChoice2)
         {
             player1Choice = player1.GetRPSChoice(rPSChoice1);
