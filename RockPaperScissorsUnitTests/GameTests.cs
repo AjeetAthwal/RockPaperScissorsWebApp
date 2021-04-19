@@ -7,7 +7,7 @@ using System.Linq;
 namespace RockPaperScissorsUnitTests
 {
     [TestClass]
-    public class GameTests
+    public class ComputerGameTests
     {
         /// <summary>
         /// Helper function that generates a random seed
