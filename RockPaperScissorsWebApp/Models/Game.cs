@@ -18,7 +18,7 @@ namespace RockPaperScissorsWebApp.Models
         protected RPSChoice player1Choice;
         protected RPSChoice player2Choice;
         protected RPSP1P2Result result;
-        public int player1wins
+        public int Player1Wins
         {
             get { return scoreboard.Player1Wins; }
         }
@@ -28,7 +28,7 @@ namespace RockPaperScissorsWebApp.Models
             scoreboard.Reset();
         }
 
-        public int Player2wins
+        public int Player2Wins
         {
             get { return scoreboard.Player2Wins; }
         }
