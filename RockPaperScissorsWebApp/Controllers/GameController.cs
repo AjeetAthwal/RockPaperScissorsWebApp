@@ -30,7 +30,7 @@ namespace RockPaperScissorsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ComputerVsComputer(FormCollection form)
         {
-            if (form["submit"] == "Play Round") computerGame.playRound((RPSChoice)0, (RPSChoice)0);
+            if (form["submit"] == "Play Round") computerGame.PlayRound();
             else if (form["submit"] == "Reset Scores") computerGame.ResetScores();
 
             var model = computerGame;
@@ -48,9 +48,9 @@ namespace RockPaperScissorsWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult PlayerVsComputer(FormCollection form)
         {
-            if (form["submit"] == "Rock") playerGame.playRound(RPSChoice.ROCK, (RPSChoice)0);
-            else if (form["submit"] == "Scissors") playerGame.playRound(RPSChoice.SCISSORS, (RPSChoice)0);
-            else if (form["submit"] == "Paper") playerGame.playRound(RPSChoice.PAPER, (RPSChoice)0);
+            if (form["submit"] == "Rock") playerGame.PlayRound(RPSChoice.ROCK);
+            else if (form["submit"] == "Scissors") playerGame.PlayRound(RPSChoice.SCISSORS);
+            else if (form["submit"] == "Paper") playerGame.PlayRound(RPSChoice.PAPER);
             else if (form["submit"] == "Reset Scores") playerGame.ResetScores();
 
             var model = playerGame;

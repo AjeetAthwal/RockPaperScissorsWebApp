@@ -26,7 +26,7 @@ namespace RockPaperScissorsUnitTests
             // Arrange
             int NUMBEROFROUNDS = 50;
             int seed = CreateSeed();
-            Game game = new Game(GameState.COMPUTERVSCOMPUTER, seed);
+            ComputerGame computerGame = new ComputerGame(seed);
             RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
 
             List<RPSChoice> expected = new List<RPSChoice>();
@@ -41,9 +41,9 @@ namespace RockPaperScissorsUnitTests
 
             for (int i = 0; i < NUMBEROFROUNDS; i++)
             {
-                game.playRound(0,0);
-                actual.Add(game.Player1Choice);
-                actual.Add(game.Player2Choice);
+                computerGame.PlayRound();
+                actual.Add(computerGame.Player1Choice);
+                actual.Add(computerGame.Player2Choice);
             }
 
             // Assert

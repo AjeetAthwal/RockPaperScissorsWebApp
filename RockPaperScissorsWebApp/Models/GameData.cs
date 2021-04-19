@@ -9,8 +9,8 @@ namespace RockPaperScissorsWebApp.Models
     {
         public GameData()
         {
-            computerGame = new Game(GameState.COMPUTERVSCOMPUTER);
-            playerGame = new Game(GameState.PLAYERVSCOMPUTER);
+            computerGame = new ComputerGame();
+            playerGame = new PlayerGame();
         }
         public Game computerGame;
         public Game playerGame;

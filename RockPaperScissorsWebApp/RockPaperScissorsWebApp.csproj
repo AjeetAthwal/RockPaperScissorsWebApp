@@ -155,10 +155,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Computer.cs" />
+    <Compile Include="Models\ComputerGame.cs" />
     <Compile Include="Models\GameData.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameState.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerGame.cs" />
     <Compile Include="Models\RandomRPSChoice.cs" />
     <Compile Include="Models\RPSChoice.cs" />
     <Compile Include="Models\RPSP1P2Result.cs" />

@@ -155,20 +155,19 @@ namespace RockPaperScissorsUnitTests
 
         /// <summary>
         /// A list of 100 random RSPChoices should be returned when a computer 
-        /// with no wins and a set seed invokes GetRPSChoice() 100 times with 
-        /// ROCK as its input. These random choices should match what is 
-        /// returned when RandomRPSChoice invokes Get() 100 times with the same
-        /// set seed
+        /// with no wins and a set seed invokes GetRPSChoice() 100 times. These
+        /// random choices should match what is returned when RandomRPSChoice
+        /// invokes Get() 100 times with the same set seed
         /// </summary>
         [TestMethod]
-        public void GetRPSChoice_100Rocks_returnsRandomRPSChoice()
+        public void GetRPSChoice_100Rounds_returnsRandomRPSChoice()
         {
             // Arrange
             int NUMBEROFGETS = 100;
             int seed = CreateSeed();
             Computer computer = CreateComputerWithNoWinsAndSetSeed(seed);
             RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
-            RPSChoice input = RPSChoice.ROCK;
+
             List<RPSChoice> expected = new List<RPSChoice>();
 
             for (int i = 0; i < NUMBEROFGETS; i++)
@@ -181,81 +180,12 @@ namespace RockPaperScissorsUnitTests
 
             for (int i = 0; i < NUMBEROFGETS; i++)
             {
-                actual.Add(computer.GetRPSChoice(input));
+                actual.Add(computer.GetRPSChoice());
             }
 
             // Assert
             Assert.IsTrue(expected.SequenceEqual(actual));
         }
 
-        /// <summary>
-        /// A list of 100 random RSPChoices should be returned when a computer 
-        /// with no wins and a set seed invokes GetRPSChoice() 100 times with 
-        /// PAPER as its input. These random choices should match what is 
-        /// returned when RandomRPSChoice invokes Get() 100 times with the same
-        /// set seed
-        /// </summary>
-        [TestMethod]
-        public void GetRPSChoice_1000Paper_returnsRandomRPSChoice()
-        {
-            // Arrange
-            int NUMBEROFGETS = 100;
-            int seed = CreateSeed();
-            Computer computer = CreateComputerWithNoWinsAndSetSeed(seed);
-            RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
-            RPSChoice input = RPSChoice.PAPER;
-            List<RPSChoice> expected = new List<RPSChoice>();
-
-            for (int i = 0; i < NUMBEROFGETS; i++)
-            {
-                expected.Add(randomRPSChoice.Get());
-            }
-
-            // Act
-            List<RPSChoice> actual = new List<RPSChoice>();
-
-            for (int i = 0; i < NUMBEROFGETS; i++)
-            {
-                actual.Add(computer.GetRPSChoice(input));
-            }
-
-            // Assert
-            Assert.IsTrue(expected.SequenceEqual(actual));
-        }
-
-        /// <summary>
-        /// A list of 100 random RSPChoices should be returned when a computer 
-        /// with no wins and a set seed invokes GetRPSChoice() 100 times with 
-        /// SCISSORS as its input. These random choices should match what is 
-        /// returned when RandomRPSChoice invokes Get() 100 times with the same
-        /// set seed
-        /// </summary>
-        [TestMethod]
-        public void GetRPSChoice_1000Scissors_returnsRandomRPSChoice()
-        {
-            // Arrange
-            int NUMBEROFGETS = 100;
-            int seed = CreateSeed();
-            Computer computer = CreateComputerWithNoWinsAndSetSeed(seed);
-            RandomRPSChoice randomRPSChoice = new RandomRPSChoice(seed);
-            RPSChoice input = RPSChoice.SCISSORS;
-            List<RPSChoice> expected = new List<RPSChoice>();
-
-            for (int i = 0; i < NUMBEROFGETS; i++)
-            {
-                expected.Add(randomRPSChoice.Get());
-            }
-
-            // Act
-            List<RPSChoice> actual = new List<RPSChoice>();
-
-            for (int i = 0; i < NUMBEROFGETS; i++)
-            {
-                actual.Add(computer.GetRPSChoice(input));
-            }
-
-            // Assert
-            Assert.IsTrue(expected.SequenceEqual(actual));
-        }
     }
 }

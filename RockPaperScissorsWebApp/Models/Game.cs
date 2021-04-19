@@ -5,42 +5,19 @@ using System.Web;
 
 namespace RockPaperScissorsWebApp.Models
 {
-    public class Game
+    public abstract class Game
     {
-        public Game(GameState gameState)
-        {
-            randomRPSChoice = new RandomRPSChoice();
-            if (gameState == GameState.COMPUTERVSCOMPUTER) player1 = new Computer(randomRPSChoice);
-            else player1 = new Player();
-            player2 = new Computer(randomRPSChoice);
-            scoreboard = new Scoreboard(player1, player2);
-        }
+        public abstract void PlayRound();
+        public abstract void PlayRound(RPSChoice rPSChoice);
+        public abstract void PlayRound(RPSChoice rPSChoice1, RPSChoice rPSChoice2);
 
-        internal Game(GameState gameState, int seed)
-        {
-            randomRPSChoice = new RandomRPSChoice(seed);
-            if (gameState == GameState.COMPUTERVSCOMPUTER) player1 = new Computer(randomRPSChoice);
-            else player1 = new Player();
-            player2 = new Computer(randomRPSChoice);
-            scoreboard = new Scoreboard(player1, player2);
-        }
-
-        public void playRound(RPSChoice rPSChoice1, RPSChoice rPSChoice2)
-        {
-            player1Choice = player1.GetRPSChoice(rPSChoice1);
-            player2Choice = player2.GetRPSChoice(rPSChoice2);
-
-            result = (RPSP1P2Result)RPSResultExtension.Beats(player1Choice, player2Choice);
-            scoreboard.Update(result);
-        }
-
-        RandomRPSChoice randomRPSChoice;
-        private readonly User player1;
-        private readonly User player2;
-        private Scoreboard scoreboard;
-        private RPSChoice player1Choice;
-        private RPSChoice player2Choice;
-        private RPSP1P2Result result;
+        protected RandomRPSChoice randomRPSChoice;
+        protected User player1;
+        protected User player2;
+        protected Scoreboard scoreboard;
+        protected RPSChoice player1Choice;
+        protected RPSChoice player2Choice;
+        protected RPSP1P2Result result;
         public int player1wins
         {
             get { return scoreboard.Player1Wins; }

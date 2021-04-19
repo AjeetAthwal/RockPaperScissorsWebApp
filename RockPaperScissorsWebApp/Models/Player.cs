@@ -11,5 +11,10 @@ namespace RockPaperScissorsWebApp.Models
         {
             return rPSChoice;
         }
+
+        public override RPSChoice GetRPSChoice()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

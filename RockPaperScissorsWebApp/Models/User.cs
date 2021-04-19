@@ -17,6 +17,7 @@ namespace RockPaperScissorsWebApp.Models
         }
 
         public abstract RPSChoice GetRPSChoice(RPSChoice rPSChoice);
+        public abstract RPSChoice GetRPSChoice();
         private int wins;
 
         public int Wins { get => wins; }
