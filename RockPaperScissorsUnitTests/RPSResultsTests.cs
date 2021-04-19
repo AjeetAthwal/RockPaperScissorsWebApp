@@ -7,6 +7,9 @@ namespace RockPaperScissorsUnitTests
     [TestClass]
     public class RPSResultsTests
     {
+        /// <summary>
+        /// WIN should be returned when RPSResultExtension.Beats() is invoked with arguments ROCK and SCISSORS (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_RockVsScissors_ReturnsWin()
         {
@@ -22,6 +25,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// WIN should be returned when RPSResultExtension.Beats() is invoked with arguments SCISSORS and PAPER (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_ScissorsVsRock_ReturnsWin()
         {
@@ -37,6 +43,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// WIN should be returned when RPSResultExtension.Beats() is invoked with arguments PAPER and ROCK (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_PaperVsRock_ReturnsWin()
         {
@@ -52,6 +61,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// LOSS should be returned when RPSResultExtension.Beats() is invoked with arguments SCISSORS and ROCK (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_ScissorsVsRock_ReturnsLoss()
         {
@@ -67,6 +79,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// LOSS should be returned when RPSResultExtension.Beats() is invoked with arguments PAPER and SCISSORS (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_PaperVsScissors_ReturnsLoss()
         {
@@ -82,6 +97,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// LOSS should be returned when RPSResultExtension.Beats() is invoked with arguments ROCK and PAPER (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_RockVsPaper_ReturnsLoss()
         {
@@ -97,6 +115,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// DRAW should be returned when RPSResultExtension.Beats() is invoked with arguments ROCK and ROCK
+        /// </summary>
         [TestMethod]
         public void Beats_RockVsRock_ReturnsDraw()
         {
@@ -112,6 +133,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// DRAW should be returned when RPSResultExtension.Beats() is invoked with arguments PAPER and PAPER (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_PaperVsPaper_ReturnsDraw()
         {
@@ -127,6 +151,9 @@ namespace RockPaperScissorsUnitTests
             Assert.AreEqual(expected, result);
         }
 
+        /// <summary>
+        /// DRAW should be returned when RPSResultExtension.Beats() is invoked with arguments SCISSORS and SCISSORS (order matters)
+        /// </summary>
         [TestMethod]
         public void Beats_ScissorsVsScissors_ReturnsDraw()
         {
