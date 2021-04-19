@@ -56,7 +56,7 @@
     <Compile Include="PlayerTests.cs" />
     <Compile Include="ComputerTests.cs" />
     <Compile Include="RandomRPSChoiceTests.cs" />
-    <Compile Include="GameTests.cs" />
+    <Compile Include="ComputerGameTests.cs" />
     <Compile Include="PlayerGameTests.cs" />
   </ItemGroup>
   <ItemGroup>
