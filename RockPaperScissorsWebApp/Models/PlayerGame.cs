@@ -14,6 +14,13 @@ namespace RockPaperScissorsWebApp.Models
             player2 = new Computer(randomRPSChoice);
             scoreboard = new Scoreboard(player1, player2);
         }
+        internal PlayerGame(int seed)
+        {
+            randomRPSChoice = new RandomRPSChoice(seed);
+            player1 = new Player();
+            player2 = new Computer(randomRPSChoice);
+            scoreboard = new Scoreboard(player1, player2);
+        }
 
         public override void PlayRound(RPSChoice rPSChoice)
         {

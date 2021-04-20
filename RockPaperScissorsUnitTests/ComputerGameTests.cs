@@ -254,8 +254,8 @@ namespace RockPaperScissorsUnitTests
 
         /// <summary>
         /// A list of 50 RPSP1P2Results should be returned when a when a 
-        /// game with a set seed invokes PlayRound() 50 times and Player1Choice
-        /// and Player2Choice are recorded. These random choices should match 
+        /// game with a set seed invokes PlayRound() 50 times and Beats
+        /// is recorded. These random choices should match 
         /// what is returned when RandomRPSChoice invokes 50 Rounds of 2 
         /// Get()'s and computes the result with the same seed
         /// </summary>
