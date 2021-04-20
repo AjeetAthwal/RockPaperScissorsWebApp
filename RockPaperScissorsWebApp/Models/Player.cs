@@ -14,7 +14,7 @@ namespace RockPaperScissorsWebApp.Models
 
         public override RPSChoice GetRPSChoice()
         {
-            throw new NotImplementedException();
+            throw new ArgumentException();
         }
     }
 }

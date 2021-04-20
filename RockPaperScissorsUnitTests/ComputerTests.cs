@@ -187,5 +187,24 @@ namespace RockPaperScissorsUnitTests
             Assert.IsTrue(expected.SequenceEqual(actual));
         }
 
+        /// <summary>
+        /// An argument exception should be encountered when GetRPSChoice() is 
+        /// invoked with one argument. It should only work with no arguments. 
+        /// </summary>
+        [DataTestMethod]
+        [DataRow(RPSChoice.PAPER)]
+        [DataRow(RPSChoice.ROCK)]
+        [DataRow(RPSChoice.SCISSORS)]
+        public void GetRPSChoice_1arg_ThrowsArgumentException(RPSChoice input)
+        {
+            // Arrange
+            Computer computer = CreateComputerWithNoWins();
+
+            // Act
+            Action actual = () => computer.GetRPSChoice(input);
+
+            // Assert
+            Assert.ThrowsException<ArgumentException>(actual);
+        }
     }
 }

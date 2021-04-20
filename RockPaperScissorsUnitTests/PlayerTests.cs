@@ -166,5 +166,22 @@ namespace RockPaperScissorsUnitTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// An argument exception should be encountered when GetRPSChoice() is 
+        /// invoked with two arguments. It should only work with no arguments. 
+        /// </summary>
+        [TestMethod]
+        public void GetRPSChoice_0args_ThrowsArgumentException()
+        {
+            // Arrange
+            Player player = CreatePlayerWithNoWins();
+
+            // Act
+            Action actual = () => player.GetRPSChoice();
+
+            // Assert
+            Assert.ThrowsException<ArgumentException>(actual);
+        }
     }
 }

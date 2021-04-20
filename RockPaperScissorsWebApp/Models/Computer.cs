@@ -19,7 +19,7 @@ namespace RockPaperScissorsWebApp.Models
 
         public override RPSChoice GetRPSChoice(RPSChoice rPSChoice)
         {
-            throw new NotImplementedException();
+            throw new ArgumentException();
         }
 
         RandomRPSChoice randomRPSChoice;
